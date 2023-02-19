@@ -42,17 +42,12 @@ export default class NavBar extends Component {
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <Link className="nav-link" aria-current="page" to="/posts">
-                      Posts
+                      Daily Attendance
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/employee">
                       Employee
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/users">
-                      Users
                     </Link>
                   </li>
                   <li className="nav-item">

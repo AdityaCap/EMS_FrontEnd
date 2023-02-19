@@ -64,7 +64,7 @@ export  class Employee extends Component {
               {this.state.componentNum === 1?
                   <EmployeeList />:this.state.componentNum === 2?
                   <Department />:this.state.componentNum === 3?<AddEmployee dept={this.props.dept}/>
-                  :this.state.componentNum === 4?<AddProject/>:<ViewProject/>
+                  :this.state.componentNum === 4?<AddProject/>:this.state.componentNum === 5?<ViewProject/>:<EmployeeList />
                   }
           </div> 
         </div>

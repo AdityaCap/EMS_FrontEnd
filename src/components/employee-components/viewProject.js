@@ -29,21 +29,12 @@ export class ProjectList extends Component{
             <tbody>
               {
                 this.props.projectList.list.map((e, index) => (
-                 
                   <tr key={e.id}>
                     <th scope="row" key={e.id}> {index + 1}</th>
                     <td>{e.id}</td>
                     <td>{e.title}</td>
-                    <td>{e.credits}</td>                    
-                    {/* <td> 
-                      {e.projects.map(p=> (
-                          <li key={index}>
-                              {p.title} 
-                          </li>
-                      ))}
-                    </td> */}
-                  </tr>
-                
+                    <td>{e.credits}</td>                  
+                </tr>
               ))}   
             </tbody>
           </table>

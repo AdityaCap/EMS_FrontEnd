@@ -8,6 +8,7 @@ import { listDepartment } from "../store/action/department";
 import Login from "./auth/login";
 import AddProject from "./employee-components/addProject";
 import ViewProject from "./employee-components/viewProject";
+import AssignProject from "./employee-components/assignProject";
 
 export  class Employee extends Component {
   constructor(props) {
@@ -51,11 +52,15 @@ export  class Employee extends Component {
                 <button  className=" list-group-item employee-sidebar" 
                 onClick={()=>(this.setState({componentNum : 4}))}>
                    Add Project</button></li>
-              
-              <li className="list-group-item">Assign Employee to Project</li>
-              <li className="list-group-item">
+                   <li className="list-group-item">
                 <button  className=" list-group-item employee-sidebar" 
                 onClick={()=>(this.setState({componentNum : 5}))}>
+                   Assign Project To Employee</button></li>
+              
+              
+              <li className="list-group-item">
+                <button  className=" list-group-item employee-sidebar" 
+                onClick={()=>(this.setState({componentNum : 6}))}>
                    View Project</button></li>
               {/* <li className="list-group-item">Show all Projects</li> */}
             </ul>
@@ -64,7 +69,7 @@ export  class Employee extends Component {
               {this.state.componentNum === 1?
                   <EmployeeList />:this.state.componentNum === 2?
                   <Department />:this.state.componentNum === 3?<AddEmployee dept={this.props.dept}/>
-                  :this.state.componentNum === 4?<AddProject/>:this.state.componentNum === 5?<ViewProject/>:<EmployeeList />
+                  :this.state.componentNum === 4?<AddProject/>:this.state.componentNum === 5?<AssignProject/>:this.state.componentNum === 6?<ViewProject/>:<EmployeeList />
                   }
           </div> 
         </div>

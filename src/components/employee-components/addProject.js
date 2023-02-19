@@ -28,29 +28,31 @@ export class AddProject extends Component{
         return(
             <div>
             <div className="card">
-              <h5 className="card-header">Add Project</h5>
-              <div className="card-body">
+              <h5 className="card-header text-center mb-0 fw-bold fs-5">Add Project</h5>
+              <form>
+              <div className="card-body  p-0 p-sm-1">
                 <h5 className="card-title">Enter Project Info: </h5>
                 <p className="card-text">
                 <span>{this.state.msg}</span> <br />
-                   <label>Project Title: </label>
+                   <label className="form-label">Project Title: </label>
                    <input type="text" 
-                            name="title"
+                            name="title" className="form-control form-control-sm"
                             value={this.state.project.title}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['title']}</span>
-                    <br /><br />
-                    <label>Project Credits: </label>
+                    <br />
+                    <label className="form-label">Project Credits: </label>
                     <input type="number" 
-                            name="credits"
+                            name="credits" className="form-control form-control-sm"
                             value={this.state.project.credits}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['credits']}</span>
-                    <br /><br />
+                    <br />
                     <button onClick={this.onAdd} className="btn btn-primary">Add Project</button>
                 </p>
                  
               </div>
+              </form>
             </div>
           </div>
         );

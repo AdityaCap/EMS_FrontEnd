@@ -27,77 +27,72 @@ export default class Attendance extends Component {
     }
 
     render() {
+        const mystyle={
+            backgroundColor: "#b69de0",
+            fontFamily: "Arial",
+          };
         return (
-            <div>
-                <div className="card">
-                    <h5 className="card-header">Add Attendance</h5>
-                    <div className="card-body">
-                        <h5 className="card-title">Enter Attendance : </h5>
-                        <p className="card-text">
-                            <span>{this.state.msg}</span> <br />
-                            <label>Emp Id: </label>
-                            <input type="number"
-                                name="emp_id"
-                                value={this.state.attendance.emp_id}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['emp_id']}</span>
-                            <br /><br />
+            <div style={mystyle} className="container-fluid">
+                <div className="row">
+                    <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                        <div className="card border-0 shadow rounded-3">
+                            <div className="card-body p-4 p-sm-5">
+                                    <h2 className="card-header text-center mb-4 fw-bold fs-5">Mark Your Attendance</h2>
+                                    <form>
+                                        {/* <h5 className="card-title">Enter Attendance</h5> */}
+                                        <span>{this.state.msg}</span>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Employee Id: </label>
+                                            <input type="number" id="form3Example3cg" className="form-control" name="emp_id" value={this.state.attendance.emp_id} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['emp_id']}</span>
+                                        </div>
 
-                            <label>Name: </label>
-                            <input type="text"
-                                name="name"
-                                value={this.state.attendance.name}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['name']}</span>
-                            <br /><br />
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Name: </label>
+                                            <input type="text" className="form-control" id="form3Example3cg" name="name" value={this.state.attendance.name} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['name']}</span>
+                                        </div>
 
-                            <label>Date: </label>
-                            <input type="date"
-                                name="date"
-                                value={this.state.attendance.date}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['date']}</span>
-                            <br /><br />
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Date: </label>
+                                            <input type="date" name="date" className="form-control" id="form3Example3cg" value={this.state.attendance.date} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['date']}</span>
+                                        </div>
 
-                            <label>Time: </label>
-                            <input type="time"
-                                name="time"
-                                value={this.state.attendance.time}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['time']}</span>
-                            <br /><br />
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Time: </label>
+                                            <input type="time" name="time" className="form-control" id="form3Example3cg" value={this.state.attendance.time} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['time']}</span>
+                                        </div>
 
-                            <label>Branch: </label>
-                            <input type="text"
-                                name="branch"
-                                value={this.state.attendance.branch}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['branch']}</span>
-                            <br /><br />
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Branch: </label>
+                                            <input type="text" name="branch" className="form-control" id="form3Example3cg" value={this.state.attendance.branch} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['branch']}</span>
+                                        </div>
 
-                            <label>Designation: </label>
-                            <input type="text"
-                                name="designation"
-                                value={this.state.attendance.designation}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['designation']}</span>
-                            <br /><br />
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Designation: </label>
+                                            <input type="text" name="designation" className="form-control" id="form3Example3cg" value={this.state.attendance.designation} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['designation']}</span>
+                                        </div>
 
-                            <label>Availability: </label>
-                            <input type="text"
-                                name="availability"
-                                value={this.state.attendance.availability}
-                                onChange={this.changeHandler} />
-                            <span style={{ color: 'red' }}>{this.state.errors['availability']}</span>
-                            <br /><br />
-
-
-                            <button onClick={this.onAdd} className="btn btn-primary">Post Attendance</button>
-                        </p>
-
+                                        <div className="form-outline mb-3">
+                                            <label className="form-label" for="form3Example3cg">Availability: </label>
+                                            <input type="text" name="availability" className="form-control" id="form3Example3cg" value={this.state.attendance.availability} onChange={this.changeHandler} />
+                                            <span style={{ color: 'red' }}>{this.state.errors['availability']}</span>
+                                        </div>
+                                        
+                                        <div className="d-grid">
+                                            <button onClick={this.onAdd} className="btn btn-primary">Post Attendance</button>
+                                        </div>
+                                        
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
         );
     }
 

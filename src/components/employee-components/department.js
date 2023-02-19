@@ -19,23 +19,24 @@ export class Department extends Component {
   render() {
     return (
       <div>
-        <div className="card">
-          <h5 className="card-header">Add Department</h5>
-          <div className="card-body">
+        <div className="card ">
+          <h5 className="card-header text-center mb-0 fw-bold fs-5">Add Department</h5>
+          <form>
+          <div className="card-body p-5 p-sm-10">
             <h5 className="card-title">Enter Department Info: </h5>
             <p className="card-text">
             <span>{this.state.msg}</span> <br />
-               <label>Department Name: </label>
-               <input type="text" 
-                        name="name"
-                        value={this.state.department.name}
-                        onChange={this.changeHandler} />
+               <label className="form-label">Department Name: </label>
+               <input type="text" name="name" className="form-control form-control-lg" value={this.state.department.name} onChange={this.changeHandler} />
                         <span style={{ color : 'red'}}>{this.state.errors['name']}</span>
-                <br /><br />
+                <br />
+                <div>
                 <button onClick={this.onAdd}>Add department</button>
+                </div>
             </p>
              
           </div>
+          </form>
         </div>
       </div>
     );

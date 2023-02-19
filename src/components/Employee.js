@@ -30,10 +30,14 @@ export  class Employee extends Component {
           this.setState({isLoggedIn: true})
   }
   render() { 
-    
+    const mystyle ={
+      backgroundColor: "#b69de0",
+      fontFamily: "Arial",
+      height:"800px"
+    };
     return (
       !this.state.isLoggedIn?<div ><Login /></div>  : 
-      <div className="container-fliud">
+      <div style={mystyle}  className="container-fluid mh-100">
         <div className="row">
           <div className="col-sm-3">
             <ul className="list-group">

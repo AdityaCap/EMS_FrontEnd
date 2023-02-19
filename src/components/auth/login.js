@@ -25,25 +25,30 @@ export class Login extends Component {
   componentDidMount() {}
 
   render() {
+    const mystyle={
+      backgroundColor: "#b69de0",
+      fontFamily: "Arial",
+    };
+
+    let url="/sign-up";
      
     return (
         this.state.isLoggedIn?<div ><Employee /></div>  : 
-      <div>
+        <div style={mystyle} className="container-fluid">
         <div className="row">
-          <div className="col-sm-3"></div>
-          <div className="col-sm-6">
-            <div className="card">
-              <div className="card-header">Login</div>
-              <div className="card-body">
+          <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div className="card border-0 shadow roubded-3 my-5">
+            <div className="card-body p-4 p-sm-5">
+              <h3 className="card-header text-center mb-2 fw-bold fs-5">LOGIN</h3>
+              <form>
               <span>{this.state.msg}</span> <br />
                 <h5 className="card-title">Enter the Credentials</h5>
-                <div className="input-group mb-3 mt-3">
-                  <span className="input-group-text" >
-                    @
-                  </span>
+                <div className="form-outline mb-3 mt-3">
+                  <label for="floatingInput">User Name:</label>
                   <input
                     type="text"
                     className="form-control"
+                    id="floatingInput"
                     placeholder="Username"
                     name="username"
                     value={this.state.user.username}
@@ -52,13 +57,12 @@ export class Login extends Component {
                   <span style={{ color : 'red'}}>{this.state.errors['username']}</span>
 
                 </div>
-                <div className="input-group mb-3">
-                  <span className="input-group-text" >
-                    **
-                  </span>
+                <div className="form-outline mb-3 mt-3">
+                  <label for="floatingPassword">Password:</label>
                   <input
                     type="password"
                     className="form-control"
+                    id="floatingPassword"
                     placeholder="Password"
                     name="password"
                     value={this.state.user.password}
@@ -66,14 +70,19 @@ export class Login extends Component {
                   />
                   <span style={{ color : 'red'}}>{this.state.errors['password']}</span>
                 </div>
-                <div className="input-group mb-3">
-                  <button className="btn btn-primary" onClick={this.login}>Login</button>
+                <div className="d-grid">
+                  <button className="btn btn-primary btn-login text-uppercase fw-bold" onClick={this.login}>Login</button>
                 </div>
-              </div>
+                <hr/>
+                <div className="d-grid mb-2">
+                  <p>Don't have an account?<a href={url}>Sign Up</a></p>
+                </div>
+              </form>
             </div>
           </div>
           <div className="col-sm-3"></div>
         </div>
+      </div>
       </div>
     );
   }

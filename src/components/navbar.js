@@ -20,13 +20,14 @@ export default class NavBar extends Component {
   }
 
   render() {
+    const mystyle ={
+      backgroundColor: "black",
+      fontFamily: "Arial",
+    };
     return ( 
       <div >
-           <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
+           <nav className="navbar navbar-expand-lg navbar-dark mb-3" style={mystyle}>
             <div className="container-fluid">
-              <Link className="navbar-brand" to="/">
-                Employee Management System
-              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -40,6 +41,11 @@ export default class NavBar extends Component {
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link className="nav-link" aria-current="page" to="/">
+                      Employee Management System
+                    </Link>
+                  </li>
                   <li className="nav-item">
                     <Link className="nav-link" aria-current="page" to="/attendance">
                       Daily Attendance
@@ -50,14 +56,9 @@ export default class NavBar extends Component {
                       Employee
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/sign-up">
-                      Sign Up
-                    </Link>
-                  </li>
                 </ul>
-              <div className="col-sm-2">
-                { this.state.isLoggedIn? <Link to="/logout"><button className="btn btn-outline-danger">
+              <div style={{display:"flex"}}>
+                { this.state.isLoggedIn? <Link to="/logout"><button className="btn btn-outline-danger" style={{marginleft: "auto"}}>
                    Logout </button>  </Link>   : ''
                 }
                

@@ -20,32 +20,61 @@ export default class SignUp  extends Component{
     componentDidMount(){}
 
     render(){
+        const mystyle ={
+            backgroundColor: "#b69de0",
+            fontFamily: "Arial",
+        };
         return(
-            <div>
-                <h1>Sign Up</h1>
-                <span>{this.state.msg}</span> <br />
-                <label>Enter the username: </label>
-                <input type="text" 
-                        name="username"
-                        value={this.state.user.username}
-                        onChange={this.changeHandler} />
-                        <span style={{ color : 'red'}}>{this.state.errors['username']}</span>
-                <br /><br />
-                <label>Enter Role: </label>
-                <input type="text" 
-                        name="role"
-                        value={this.state.user.role}
-                        onChange={this.changeHandler} />
-                        <span style={{ color : 'red'}}>{this.state.errors['role']}</span>
-                <br /><br />
-                <label>Enter password: </label>
-                <input type="password" 
-                        name="password"
-                        value={this.state.user.password}
-                        onChange={this.changeHandler} />
-                        <span style={{ color : 'red'}}>{this.state.errors['password']}</span>
-                <br /><br />
-                <button onClick={this.onSignUp}>Sign Up</button>
+            <div style={mystyle} className="container-fluid">
+                <div className="row">
+                    <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                        <div className="card border-0 shadow rounded-3">
+                            <div className="card-body p-4 p-sm-5">
+                                    <h2 className="text-uppercase text-center mb-2">Create an account</h2>
+                                    <span>{this.state.msg}</span> <br />
+                                    <form>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Enter the username: </label>
+                                            <input type="text" 
+                                                className="form-control form-control-lg"
+                                                id="form3Example3cg"
+                                                name="username"
+                                                value={this.state.user.username}
+                                                onChange={this.changeHandler} />
+                                            <span style={{ color : 'red'}}>{this.state.errors['username']}</span>
+                                        </div>
+                                        <br />
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Enter Role: </label>
+                                            <input type="text" 
+                                                name="role"
+                                                id="form3Example3cg"
+                                                className="form-control form-control-lg"
+                                                value={this.state.user.role}
+                                                onChange={this.changeHandler} />
+                                            <span style={{ color : 'red'}}>{this.state.errors['role']}</span>
+                                        </div>
+                                        <br/>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" for="form3Example3cg">Enter password: </label>
+                                            <input type="password" 
+                                                name="password"
+                                                id="form3Example3cg"
+                                                className="form-control form-control-lg"
+                                                value={this.state.user.password}
+                                                onChange={this.changeHandler} />
+                                            <span style={{ color : 'red'}}>{this.state.errors['password']}</span>
+                                        </div>
+                                        <br/>
+                                        <div className="d-grid">
+                                        <button type="button"
+                                            className="btn btn-primary btn-login text-uppercase fw-bold" onClick={this.onSignUp}>Sign Up</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                </div>
             </div>
         );
     }

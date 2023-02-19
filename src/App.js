@@ -10,6 +10,7 @@ import NavBar from "./components/navbar";
 import { Provider } from "react-redux";
 import {store} from "./store";
 import Employee from "./components/Employee";
+import Attendance from "./components/Attendance";
 import './App.css';
 import { Login } from "./components/auth/login";
 import Logout from "./components/auth/logout";
@@ -27,6 +28,7 @@ export default class App extends Component{
             <Route path="/logout" element={ <Logout />} />
              
             <Route path="/employee" element={ <Employee />} /> 
+            <Route path="/attendance" element={ <Attendance />} /> 
             <Route path="/sign-up" element={ <SignUp />} /> 
              
             <Route path="*" element={ <PageNotFound />} />

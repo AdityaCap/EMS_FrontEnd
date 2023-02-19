@@ -41,7 +41,7 @@ export default class NavBar extends Component {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" aria-current="page" to="/posts">
+                    <Link className="nav-link" aria-current="page" to="/attendance">
                       Daily Attendance
                     </Link>
                   </li>

@@ -25,15 +25,20 @@ export class Login extends Component {
   componentDidMount() {}
 
   render() {
-     
+    const mystyle={
+      // backgroundColor: "#b69de0",
+      fontFamily: "Arial",
+    }
+    
+    let url= "/sign-up";
     return (
         this.state.isLoggedIn?<div ><Employee /></div>  : 
-      <div>
+      <div style={mystyle} className="container-fluid">
         <div className="row">
           <div className="col-sm-3"></div>
           <div className="col-sm-6">
             <div className="card">
-              <div className="card-header">Login</div>
+              <div className="card-header text-center mb-2 fw-bold fs-5">Login</div>
               <div className="card-body">
               <span>{this.state.msg}</span> <br />
                 <h5 className="card-title">Enter the Credentials</h5>
@@ -68,6 +73,11 @@ export class Login extends Component {
                 </div>
                 <div className="input-group mb-3">
                   <button className="btn btn-primary" onClick={this.login}>Login</button>
+                </div>
+                <hr/>
+                <div className="d-grid mb-2">
+                  <p>Don't have an account? <a href={url}>Sign Up</a></p>
+
                 </div>
               </div>
             </div>

@@ -32,44 +32,55 @@ export class AddEmployee extends Component{
     }  
 
     render(){
+        const mystyle={
+            fontFamily: "Arial",
+            marginTop: "0px",
+            backgroundColor: "#b69de0",
+          };
         return(
-            <div>
-            <div className="card">
-              <h5 className="card-header">Add Employee</h5>
+            <div style={mystyle} className="container">
+              <div className="card">
+              <h5 className="card-header text-center mb-2 fw-bold fs-5">Add Employee</h5>
+              <form>
               <div className="card-body">
-                <h5 className="card-title">Enter Employee Info: </h5>
+                <h5 className="card-title p-0 m-0">Enter Employee Info: </h5>
                 <p className="card-text">
                 <span>{this.state.msg}</span> <br />
                    <label>Employee Name: </label>
                    <input type="text" 
                             name="name"
+                            className="form-control form-control-sm"
                             value={this.state.employee.name}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['name']}</span>
-                    <br /><br />
+                            <br/>
                     <label>Employee City: </label>
                     <input type="text" 
                             name="city"
+                            className="form-control form-control-sm"
                             value={this.state.employee.city}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['city']}</span>
-                    <br /><br />
+                            <br/>
                     <label>Employee Salary: </label>
                     <input type="number" 
                             name="salary"
+                            className="form-control form-control-sm"
                             value={this.state.employee.salary}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['salary']}</span>
-                    <br /><br />
-                    <label>Joining Date: </label>
+                            <br/>
+                    <label >Joining Date: </label>
                     <input type="date" 
                             name="joiningDate"
+                            className="form-control form-control-sm"
                             value={this.state.employee.joiningDate}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['joiningDate']}</span>
-                    <br /><br />
-                    <label>Select Gender: </label>
-                    <select name="gender" 
+                            <br/>
+                    <label >Select Gender: </label>
+                    <select name="gender"
+                    className="form-control form-control-sm"
                             value={this.state.employee.gender} 
                             onChange={this.changeHandler} >
                         <option key={0} value="">--Select Gender--</option>
@@ -77,9 +88,10 @@ export class AddEmployee extends Component{
                         <option key={2} value="FEMALE">FEMALE</option>
                     </select>
                     <span style={{ color : 'red'}}>{this.state.errors['gender']}</span>
-                    <br /><br />
+                    <br/>
                     <label>Select Department: </label>
                     <select name="departmentID" 
+                    className="form-control form-control-sm"
                             value={this.state.employee.departmentID} 
                             onChange={this.changeHandler} > 
                              <option key={0} value="">--Select Department--</option>
@@ -91,26 +103,29 @@ export class AddEmployee extends Component{
                          
                     </select>
                     <span style={{ color : 'red'}}>{this.state.errors['departmentId']}</span>
-                    <br /><br />
+                    <br/>
                     
                     <label>Username: </label>
                     <input type="text" 
                             name="username"
+                            className="form-control form-control-sm"
                             value={this.state.employee.username}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['username']}</span>
-                            <br /><br />
+                            <br/> 
                     <label>Password: </label>
                     <input type="password" 
                             name="password"
+                            className="form-control form-control-sm"
                             value={this.state.employee.password}
                             onChange={this.changeHandler} />
                             <span style={{ color : 'red'}}>{this.state.errors['password']}</span>
-                            <br /><br />
+                            <br/> 
                     <button onClick={this.onAdd} className="btn btn-primary">Add Employee</button>
                 </p>
                  
               </div>
+              </form>
             </div>
           </div>
         );
@@ -214,7 +229,7 @@ async postEmployee(e){
         this.props.addEmployee(data);
       } catch (error) {
         this.setState({
-            msg: 'Operation Failed'
+            msg: ''
         })
       }
 }
@@ -227,4 +242,4 @@ function mapStateToProps(state){
     }    
 }
 
-export default connect(mapStateToProps, {listDepartment,addDepartment})(AddEmployee); 
+export default connect(mapStateToProps, {listDepartment,addDepartment})(AddEmployee);

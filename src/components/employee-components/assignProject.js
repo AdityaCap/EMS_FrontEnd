@@ -115,7 +115,7 @@ async postProject(p){
         this.props.addProject(data);
       } catch (error) {
         this.setState({
-            msg: 'Operation Failed'
+            msg: 'Operation'
         })
       }
 }

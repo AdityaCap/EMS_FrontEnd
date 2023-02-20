@@ -8,7 +8,7 @@ import { listDepartment } from "../store/action/department";
 import Login from "./auth/login";
 import AddProject from "./employee-components/addProject";
 import ViewProject from "./employee-components/viewProject";
-import AssignProject from "./employee-components/assignProject";
+import  AssignProject  from "./employee-components/assignProject";
 
 export  class Employee extends Component {
   constructor(props) {
@@ -30,10 +30,14 @@ export  class Employee extends Component {
           this.setState({isLoggedIn: true})
   }
   render() { 
-    
+    const mystyle ={
+      backgroundColor: "#b69de0",
+      fontFamily: "Arial",
+      height:"800px"
+    };
     return (
       !this.state.isLoggedIn?<div ><Login /></div>  : 
-      <div className="container-fliud">
+      <div style={mystyle}  className="container-fluid mh-100">
         <div className="row">
           <div className="col-sm-3">
             <ul className="list-group">
@@ -52,13 +56,13 @@ export  class Employee extends Component {
                 <button  className=" list-group-item employee-sidebar" 
                 onClick={()=>(this.setState({componentNum : 4}))}>
                    Add Project</button></li>
+              
                    <li className="list-group-item">
                 <button  className=" list-group-item employee-sidebar" 
                 onClick={()=>(this.setState({componentNum : 5}))}>
-                   Assign Project To Employee</button></li>
-              
-              
+                   Assign Project to Employee</button></li>
               <li className="list-group-item">
+
                 <button  className=" list-group-item employee-sidebar" 
                 onClick={()=>(this.setState({componentNum : 6}))}>
                    View Project</button></li>
@@ -71,7 +75,7 @@ export  class Employee extends Component {
                   <Department />:this.state.componentNum === 3?<AddEmployee dept={this.props.dept}/>
                   :this.state.componentNum === 4?<AddProject/>:this.state.componentNum === 5?<AssignProject/>:this.state.componentNum === 6?<ViewProject/>:<EmployeeList />
                   }
-          </div> 
+          </div>
         </div>
       </div>
     );
